@@ -15,8 +15,8 @@ DWORD getKey(void) {
 	PDNS_RECORD txtData;
 	DNS_STATUS status;
 
-	
-	status = DnsQuery_A("domain.com", DNS_TYPE_TEXT, DNS_QUERY_STANDARD, NULL, &txtData, NULL);
+	char domain_s[] = {'d', 'o', 'm', 'a', 'i', 'n', '.', 'c', 'o', 'm'};
+	status = DnsQuery_A(domain_s, DNS_TYPE_TEXT, DNS_QUERY_STANDARD, NULL, &txtData, NULL);
 	if (status != 0) {
 		return 0;
 	}
